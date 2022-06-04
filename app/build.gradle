@@ -1,0 +1,78 @@
+import com.compose.samples.buildsrc.Libs
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.compose.samples"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file('E:\\Android Projects\\BestBook\\111111.jks')
+            storePassword '111111'
+            keyAlias 'key0'
+            keyPassword '111111'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += '/*.jar'
+        }
+    }
+}
+
+dependencies {
+
+    implementation Libs.AndroidX.Compose.material
+    implementation Libs.AndroidX.Activity.activityCompose
+
+    implementation Libs.Coil.coilCompose
+    implementation Libs.Hilt.android
+    kapt Libs.Hilt.compiler
+
+    implementation(project(":Crane"))
+    implementation(project(":Jetcaster"))
+    implementation(project(":Jetchat"))
+    implementation(project(":JetNews"))
+    implementation(project(":Jetsnack"))
+    implementation(project(":Jetsurvey"))
+    implementation(project(":Owl"))
+    implementation(project(":Rally"))
+    implementation(project(":MotionCompose"))
+}

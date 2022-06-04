@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "ComposeSamples"
+include ':app'
+include ':Crane'
+include ':Jetcaster'
+include ':Jetchat'
+include ':JetNews'
+include ':Jetsnack'
+include ':Jetsurvey'
+include ':Owl'
+include ':Rally'
+include ':MotionCompose'

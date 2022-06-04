@@ -1,0 +1,22 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Project exclude paths
+/buildSrc/build/
+/Crane/build/
+/Jetcaster/build/
+/Jetchat/build/
+/JetNews/build/
+/Jetsnack/build/
+/Jetsurvey/build/
+/Owl/build/
+/Rally/build/
+/MotionCompose/build/
